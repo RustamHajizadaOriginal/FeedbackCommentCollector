@@ -30,7 +30,6 @@ const renderFeedBackItem = (feedbackItem) => {
         }</p>
     </li>
  `;
-  // insert new feedback item in list
   feedbackListEl.insertAdjacentHTML("beforeend", feedbackItemHTML);
 };
 
