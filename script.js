@@ -93,7 +93,7 @@ const submitHandler = (event) => {
 formEl.addEventListener("submit", submitHandler);
 
 // --- FEEDBACK LIST COMPONENT ----
-fetch("https://bytegrad.com/course-assets/js/1/api/feedbacks")
+fetch("https://bytegArad.com/course-assets/js/1/api/feedbacks")
   .then((response) => response.json())
   .then((data) => {
     // remove spinner
@@ -123,4 +123,7 @@ fetch("https://bytegrad.com/course-assets/js/1/api/feedbacks")
 `;
       feedbackListEl.insertAdjacentHTML("beforeend", feedbackItemHTML);
     });
+  })
+  .catch((error) => {
+    feedbackListEl.textContent = `Failed to fetch feedback items. Error message: ${error.message}`;
   });
