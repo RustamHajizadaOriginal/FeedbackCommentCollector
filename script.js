@@ -1,5 +1,5 @@
 // ----_---GLOBAL CONSTANTS---_----
-const MAX_CHARS = 150;
+const MAX_CHARS = 300;
 const BASE_API_URL = "https://bytegrad.com/course-assets/js/1/api";
 const textareaEl = document.querySelector(".form__textarea");
 const counterEl = document.querySelector(".counter");
@@ -132,8 +132,15 @@ const clickHandler = (event) => {
   const upvoteIntentionEl = clickedEl.className.includes("upvote");
   // run the appropriate logic for each options
   if (upvoteIntentionEl) {
+    // get the closest upvote button
+    const upvoteBtnEl = clickedEl.closest(".upvote");
+    // disable upvote button (prevent double-click or spam)
+    upvoteBtnEl.disabled = true;
+    // select the upvout count element within the upvote button
+    const upvoteCountEl = upvoteBtnEl.querySelector(".upvote__count");
   } else {
     // expand the clicked feedback item
+    clickedEl.closest(".feedback").classList.toggle("feedback--expand");
   }
 };
 feedbackListEl.addEventListener("click", clickHandler);
