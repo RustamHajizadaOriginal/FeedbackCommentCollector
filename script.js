@@ -138,6 +138,14 @@ const clickHandler = (event) => {
     upvoteBtnEl.disabled = true;
     // select the upvout count element within the upvote button
     const upvoteCountEl = upvoteBtnEl.querySelector(".upvote__count");
+    // get currently displayed upvote counts as number (+)
+    let upvoteCountTextContent = +upvoteCountEl.textContent;
+
+    // increment by 1
+    upvoteCountTextContent = upvoteCountTextContent + 1;
+
+    // set updataded upvoteCountTextContent
+    upvoteCountEl.textContent = upvoteCountTextContent;
   } else {
     // expand the clicked feedback item
     clickedEl.closest(".feedback").classList.toggle("feedback--expand");
