@@ -1,6 +1,7 @@
 // ----_---GLOBAL CONSTANTS---_----
 const MAX_CHARS = 300;
 const BASE_API_URL = "https://bytegrad.com/course-assets/js/1/api";
+// Get DOM elements
 const textareaEl = document.querySelector(".form__textarea");
 const counterEl = document.querySelector(".counter");
 const formEl = document.querySelector(".form");
@@ -9,8 +10,8 @@ const submitBtnEl = document.querySelector(".submit-btn");
 const spinnerEl = document.querySelector(".spinner");
 const hashtagListEl = document.querySelector(".hashtags");
 
+// Function to render feedback item
 const renderFeedBackItem = (feedbackItem) => {
-  // New feedback ite, HTML
   const feedbackItemHTML = `
     <li class="feedback">
       <button class="upvote">
